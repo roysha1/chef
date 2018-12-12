@@ -12,7 +12,10 @@ end
 package 'ntp'
 
 file '/etc/motd' do
-  content 'this server is the property of chef training'
+  content "property of:
+  ip address : #{node['ipaddress']}
+
+"
   action :create
 end
 
